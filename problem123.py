@@ -55,6 +55,7 @@ plt.xlabel('xi',fontsize=17)
 plt.ylabel('PDF',fontsize=17)
 plt.title('Q2.Density Histogram of Numpy Random-numbers',fontsize=20)
 plt.suptitle('A PDF of 10,000 uniform deviates between 0 and 1',x=0.5,y=-0.001)
+plt.legend()
 plt.show()
 
 
