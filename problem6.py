@@ -39,7 +39,7 @@ plt.xlabel('xi',fontsize=17)
 plt.ylabel('PDF',fontsize=17)
 plt.suptitle('A PDF of 10,000 non-uniform gaussian deviates',x=0.5,y=-0.05)
 plt.legend( loc = 'best')
-plt.title('Gaussian Density Histogram of Random-numbers',fontsize=20)
+plt.title('Density Histogram of Random-numbers',fontsize=20)
 plt.show()
 
 #Efficiency
