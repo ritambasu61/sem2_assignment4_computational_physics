@@ -41,6 +41,6 @@ elif (5.0<p1_V_greter_v1<10.0 or 90.0<p1_V_greter_v1<95.0)and (5.0<p2_V_greter_v
 elif(10.0<p1_V_greter_v1<90.0)and(10.0<p2_V_greter_v2<90.0):
     print('Numbers are sufficiently random')
 else:
-    print('nothing can be said')
+    print('nothing can be said from 2 observation')
     
     
