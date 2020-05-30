@@ -45,7 +45,9 @@ def log_likelihood(theta, x, y, yerr):
 #prior_probability_function
 def log_prior(theta):
     a,b,c = theta
-    if 0.0 < a < 500 and -1000 < b < 1000.0 and -100< c <500.0 :
+    """c value limit choosing is unstable...you can choose it to be 
+    positive to get minimum uncertainty"""
+    if -500.0 < a < 500.0 and -500.0 < b < 500.0 and 10.0< c <1000:
         return 0.0
     return -np.inf
 
@@ -74,7 +76,7 @@ samples = sampler.get_chain()
 
 #a value plot
 plt.plot(samples[:,:,0],color='Black',lw=0.75)
-plt.ylim(-0.01,-0.006)
+#plt.ylim(-0.01,-0.006)
 plt.title('Markov Chains for parameter a ',fontsize=20)
 plt.ylabel('a',fontsize=17)
 plt.xlabel('steps',fontsize=17)
@@ -82,7 +84,7 @@ plt.show()
 
 #b value plot
 plt.plot(samples[:,:,1],color='Black',lw=0.75)
-plt.ylim(3.714,3.718)
+#plt.ylim(3.714,3.718)
 plt.title('Markov Chains for parameter b ',fontsize=20)
 plt.ylabel('b',fontsize=17)
 plt.xlabel('steps',fontsize=17)
@@ -90,7 +92,7 @@ plt.show()
 
 #c value plot
 plt.plot(samples[:,:,2],color='Black',lw=0.75)
-plt.ylim(18.8325,18.8352)
+#plt.ylim(18.8325,18.8352)
 plt.title('Markov Chains for parameter c',fontsize=20)
 plt.ylabel('c',fontsize=17)
 plt.xlabel('steps',fontsize=17)
@@ -142,8 +144,6 @@ plt.show()
 #printing best_fitted a,b,c values and standerd deviations   
 print("The best fittted values of:\n\ta=",a_true,"\n\tb=",b_true,"\n\tc=",c_true)
 print("one sigma uncertainties are:\n\t\u0394a=",a_std,"\n\t\u0394b=",b_std,"\n\t\u0394c=",c_std)
-                    
-
 
 
 
