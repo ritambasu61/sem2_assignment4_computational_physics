@@ -46,7 +46,7 @@ def log_likelihood(theta, x, y, yerr):
 def log_prior(theta):
     a,b,c = theta
     """c value limit choosing is unstable...you can choose it to be 
-    positive to get minimum uncertainty"""
+    positive to get minimum uncertainty in c"""
     if -500.0 < a < 500.0 and -500.0 < b < 500.0 and 10.0< c <1000:
         return 0.0
     return -np.inf
