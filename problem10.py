@@ -16,7 +16,6 @@ from matplotlib import pyplot as plt
 
 lines = open('data.txt','r').read().split('\n') #making a list whose elements are each line of the data
 lines=lines[5:] #cutting the headlines from the data and keeping only  the data part with '&'
-index=[]
 x=[]
 y=[]
 yerr=[]
@@ -24,7 +23,6 @@ yerr=[]
 for i in range (len(lines)):
     txt=lines[i]
     index_dt,x_dt,y_dt,yerr_dt=txt.split('&')
-    index.append(float(index_dt))
     x.append(float(x_dt))
     y.append(float(y_dt))
     yerr.append(float(yerr_dt))
@@ -76,7 +74,6 @@ samples = sampler.get_chain()
 
 #a value plot
 plt.plot(samples[:,:,0],color='Black',lw=0.75)
-#plt.ylim(-0.01,-0.006)
 plt.title('Markov Chains for parameter a ',fontsize=20)
 plt.ylabel('a',fontsize=17)
 plt.xlabel('steps',fontsize=17)
@@ -84,7 +81,6 @@ plt.show()
 
 #b value plot
 plt.plot(samples[:,:,1],color='Black',lw=0.75)
-#plt.ylim(3.714,3.718)
 plt.title('Markov Chains for parameter b ',fontsize=20)
 plt.ylabel('b',fontsize=17)
 plt.xlabel('steps',fontsize=17)
@@ -92,7 +88,6 @@ plt.show()
 
 #c value plot
 plt.plot(samples[:,:,2],color='Black',lw=0.75)
-#plt.ylim(18.8325,18.8352)
 plt.title('Markov Chains for parameter c',fontsize=20)
 plt.ylabel('c',fontsize=17)
 plt.xlabel('steps',fontsize=17)
