@@ -115,7 +115,7 @@ def f(abc,x):
     return(abc[0]*pow(x,2)+abc[1]*x+abc[2])
     
  
-x_arr=np.linspace(40,288,350)
+x_arr=np.linspace(0,290,400)
 f_arr=[]
 x_f=[]
 for i in range(200):
